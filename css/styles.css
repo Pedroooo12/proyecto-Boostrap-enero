@@ -1,0 +1,403 @@
+:root{
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    /*Negro fondo #000000 18%*/
+    --rojo: rgb(197, 6, 6);
+    --blancoSection: #f9f9f9;
+    /*Azul claro 015C92 con 12% de transparencia*/
+
+    --fuentePrincipal: 'Nunito', sans-serif;
+}
+
+
+
+/*Para no preocuparnos por los paddings inecesarios*/
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*para que un rem sea igual a 10px*/
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuentePrincipal) !important;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+h1,h2,h3{
+    font-weight: 900;
+    margin: 1rem 0 4rem 0;
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4.8rem !important;
+}
+
+h2{
+    font-size: 2.8rem;
+}
+
+@media (min-width: 768px){
+    h2{
+        font-size: 4.8rem;
+    }
+       
+}
+
+h4{
+    font-size: 2rem;
+}
+
+@media (min-width: 768px){
+    h4{
+        font-size: 2.4rem;
+    }    
+}
+
+p{
+    font-size: 1.8rem !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.contenedor{
+    max-width: 130rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+/*Utilidades*/
+.bg-negro{
+    background-color: var(--negro);
+}
+
+.c-white{
+    color: var(--blanco);
+}
+.margin{
+    margin-top: 6rem;
+}
+.padding{
+   padding-top: 6rem;
+}
+
+.bg-section{
+    background-color: var(--blancoSection);
+}
+
+.border-gray{
+    border: 1px solid gray;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.red{
+    color: var(--rojo);
+}
+.btn-rojo{
+    color: var(--rojo);
+    border: 1px solid var(--rojo);
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    text-align: center;
+    margin: 0 auto 2rem auto;
+    font-size: 1.8rem;
+    transition: all 300ms linear;
+    background-color: transparent;
+}
+
+.btn-rojo:hover{
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+.btn-azul{
+    color: var(--blanco);
+    border: 0px;
+    background-color: var(--azulOscuro);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 70%;
+    margin-top: 2rem;
+    transition: linear 300ms;
+}
+
+.btn-azul:hover{
+    background-color: var(--azulFondo);
+    color: var(--azulOscuro);
+}
+
+@media (min-width: 1020px){
+    .btn-azul{
+        width: 37%;
+        margin-right: 3rem;
+        font-size: 1.7rem;
+    } 
+}
+
+.btn-submit{
+    color: var(--blanco);
+    border: 0px;
+    background-color: var(--azulOscuro);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 70%;
+    margin: auto;
+    transition: linear 300ms;
+}
+
+@media (min-width: 1020px){
+    .btn-submit{
+        width: 37%;
+        margin-right: 3rem;
+        font-size: 1.7rem;
+    } 
+}
+
+/*HEADER*/
+
+.header{
+    box-shadow: 0px 0px 3px black;
+    background-color: white;
+}
+
+/*logotipo*/
+.logo{
+    font-size: 2rem !important;
+    color: var(--blanco) !important;
+    background-color: var(--rojo);
+    transition: all 300ms linear;
+}
+
+.logo:hover{
+    background-color: var(--negro);
+}
+
+/*menu li*/
+.nav-link{
+    color: black !important;
+}
+
+/*boton menu despegable*/
+.btn-menu{
+    font-size: 2rem !important;
+}
+
+/*menu*/
+@media (min-width: 992px){
+    .nav-link{
+        font-size: 1.8rem;
+        transition: linear 300ms;
+    }
+
+    .nav-link:hover{
+        transform: scale(1.1);
+        border-bottom: 1px solid var(--azulOscuro);
+        color: var(--rojo) !important;
+    }
+}
+
+/*Imagen*/
+.home__img{
+    animation: hamburguer 3s linear infinite;
+}
+
+@keyframes hamburguer{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+
+
+    50%{
+        transform: translateY(3rem);
+    }
+}
+
+/*main*/
+
+.main{
+    background-image: url(../img/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 8rem 0;
+}
+
+/*especialidades*/
+
+.box__especial{
+    border: 1px solid gray;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.box__especial:hover .imagen__box{
+    top: 0;
+}
+
+.imagen__box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -200%;
+    left: 0;
+    object-fit: cover;
+    transition: all 700ms linear;
+}
+
+/*Tercera seccion*/
+
+.caja__tercera{
+    position: relative;
+}
+
+@media (min-width: 765px){
+    .img__tercera{
+        height: 26rem;
+        object-fit: cover;
+    }
+           
+}
+
+.money{
+    background-color: var(--rojo);
+    color: var(--blanco);
+    position: absolute;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    top: 30px;
+    left: 30px;
+}
+
+.estrella{
+    color: yellow;
+    font-size: 1.8rem;
+}
+
+/*Cuarta seccion*/
+
+@media (min-width: 765px){
+    .boxes{
+        height: 30rem;
+    } 
+}
+
+.img__steps{
+    box-shadow: 0px 0px 3px black;
+}
+
+/*quitna seccion*/
+
+
+.img__quinta{
+    height: 25rem !important;
+    object-fit: cover;
+}
+.caja__box{
+    padding: 2rem;
+    position: absolute;
+    background-color: white;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    top: -200%;
+    left: 0;
+    transition: all 700ms linear;
+}
+
+.box__especial:hover .caja__box{
+    top: 0;
+}
+
+/*reviews seccion*/
+
+.grid__customers{
+    margin-top: 10rem;
+    gap: 12rem !important;
+}
+
+@media (min-width: 765px){
+    .grid__customers{
+        gap: 10rem !important;
+    }
+}
+
+@media (min-width: 992px){
+    .grid__customers{
+        gap: 5rem !important;
+    }
+}
+.customers{
+    height: 10rem;
+    margin-top: -12rem;
+}
+
+.box__negra{
+    background-color: rgb(32, 29, 29);
+}
+
+.box__negra::before{
+    content: "";
+    display: block;
+    border-radius: 9999px;
+    width: 14rem;
+    height: 14rem;
+    background-color: var(--blanco);
+    margin: auto;
+    margin-top: -9rem;
+}
+
+.estrella-roja{
+    color: var(--rojo);
+}
+
+/*Contacto*/
+.order{
+    padding-bottom: 5rem;
+}
+.form-control{
+    font-size: 2rem !important;
+}
+
+@media (min-width: 765px){
+    .img__contact{
+        height: 42rem;
+        object-fit: cover;
+    }       
+}
+
+@media (min-width: 992px){
+    .img__contact{
+        height: 40rem;
+    }       
+}
+
+
+/*subir*/
+.subir{
+    background-color: var(--rojo);
+    padding: 1rem 2rem;
+    border: 0px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.icono{
+    font-size: 3rem;
+    color: var(--blanco);
+}
